@@ -1,0 +1,32 @@
+[
+    {
+        "type": "bedrock",
+        "name": "Bedrock Beta Worlds",
+        "worldsFolder": "C:\\Users\\sskee\\AppData\\Roaming\\.minecraft_bedrock\\installations\\Sam\\Latest Beta\\packageData\\minecraftWorlds",
+        "storageFolder": "C:\\Users\\sskee\\OneDrive\\Documents\\Games\\Minecraft\\Saves\\Bedrock - Betas",
+        "excludeWorlds": [],
+        "conflictResolution": "overwrite-storage",
+        "additionalFiles": [
+            "minecraftpe\\options.txt",
+            "minecraftpe\\external_servers.txt",
+            "resource_packs",
+            "behavior_packs",
+            "skin_packs",
+            "world_templates"
+        ]
+    },
+    {
+        "type": "java",
+        "name": "Regular Java Worlds",
+        "worldsFolder": "C:\\Users\\sskee\\AppData\\Roaming\\.minecraft\\saves",
+        "storageFolder": "C:\\Users\\sskee\\OneDrive\\Documents\\Games\\Minecraft\\Saves\\Java",
+        "conflictResolution": "ask",
+        "excludeWorlds": [
+            "Java World to Not Sync"
+        ],
+        "additionalFiles": [
+            "options.txt",
+            "servers.dat"
+        ]
+    }
+]
