@@ -26,7 +26,9 @@ export interface WorldsConfig {
 const rootTempFolder = join(process.platform == 'win32' ? process.env.TEMP : '/tmp', 'minecraft-syncer');
 
 export async function archiveWorld(config: WorldsConfig) {
-    const worldFolders = readdirSync(config.worldsFolder, { withFileTypes: true });
+    const worldFolders = readdirSync(config.worldsFolder, { withFileTypes: true })
+        // ensure that Mac-specific config dir does NOT get archived, too...
+        .filter(w => w.isDirectory() && w.name != '.DS_Store');
     
     const tempFolder = join(rootTempFolder, config.name);
     

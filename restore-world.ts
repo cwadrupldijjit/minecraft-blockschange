@@ -11,10 +11,12 @@ import { Extract, Parse } from 'unzipper';
 import type { WorldsConfig } from './archive-world';
 
 export async function restoreWorld(config: WorldsConfig) {
-    const worldArchives = readdirSync(config.storageFolder, { withFileTypes: true });
+    const worldArchives = readdirSync(config.storageFolder, { withFileTypes: true })
+        // ensure that Mac-specific config dir does NOT attempt to be unzipped, too...
+        .filter(w => w.isFile() && (w.name.endsWith('.zip') || w.name.endsWith('.mcworld')));
     
     for (const archive of worldArchives) {
-        if (archive.isDirectory() || archive.name.startsWith('_additional-files') || config.excludeWorlds.some(name => archive.name.includes(name))) {
+        if (archive.name.startsWith('_additional-files') || config.excludeWorlds.some(name => archive.name.includes(name))) {
             continue;
         }
         const readStream = createReadStream(join(config.storageFolder, archive.name));
@@ -25,8 +27,7 @@ export async function restoreWorld(config: WorldsConfig) {
             worldFolderName = basename(worldFolderName, '.mcworld').slice(worldFolderName.lastIndexOf('-') + 1);
         }
         
-        // TODO: remove the `+ '_TEST'` from the end of the worlds folder when verified that it worked correctly
-        const extractStream = Extract({ concurrency: 5, path: join(config.worldsFolder, worldFolderName + '_TEST') });
+        const extractStream = Extract({ concurrency: 5, path: join(config.worldsFolder, worldFolderName) });
         
         await readStream.pipe(extractStream)
             .promise();
