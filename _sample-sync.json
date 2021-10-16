@@ -2,8 +2,8 @@
     {
         "type": "bedrock",
         "name": "Bedrock Beta Worlds",
-        "worldsFolder": "C:\\Users\\sskee\\AppData\\Roaming\\.minecraft_bedrock\\installations\\Sam\\Latest Beta\\packageData\\minecraftWorlds",
-        "storageFolder": "C:\\Users\\sskee\\OneDrive\\Documents\\Games\\Minecraft\\Saves\\Bedrock - Betas",
+        "worldsFolder": "C:\\Users\\<USERNAME>\\AppData\\Roaming\\.minecraft_bedrock\\installations\\Sam\\Latest Beta\\packageData\\minecraftWorlds",
+        "storageFolder": "C:\\Users\\<USERNAME>\\OneDrive\\Documents\\Games\\Minecraft\\Saves\\Bedrock - Betas",
         "excludeWorlds": [],
         "conflictResolution": "overwrite-storage",
         "additionalFiles": [
@@ -18,8 +18,8 @@
     {
         "type": "java",
         "name": "Regular Java Worlds",
-        "worldsFolder": "C:\\Users\\sskee\\AppData\\Roaming\\.minecraft\\saves",
-        "storageFolder": "C:\\Users\\sskee\\OneDrive\\Documents\\Games\\Minecraft\\Saves\\Java",
+        "worldsFolder": "C:\\Users\\<USERNAME>\\AppData\\Roaming\\.minecraft\\saves",
+        "storageFolder": "C:\\Users\\<USERNAME>\\OneDrive\\Documents\\Games\\Minecraft\\Saves\\Java",
         "conflictResolution": "ask",
         "excludeWorlds": [
             "Java World to Not Sync"
