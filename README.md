@@ -195,5 +195,7 @@ You could:
    - Then you don't have to install Node or anything else--just download the .zip of the process and you're good to go!
 - Partial copies of settings
    - That way, you can move between devices and copy only the configurations you want between games--think OptiFine, sounds, brightness, auto-jump, etc.  No need to manually tweak settings
+- Per-world settings, applied when syncing
+   - Allows for worlds (such as challenge worlds) to have specific settings applied when you want to launch that world; has to happen after partial application of settings has been implemented and might need some further concept planning (maybe a mod to help catch when a world is opened/closed to change/apply different settings, though that makes it a little less accessible...)
 - Syncing directly to a cloud storage location instead of copying to another place on a filesystem
    - This means that you don't have to do it yourself, but will require me putting together privacy explanations, etc.  At this point in time, since the process doesn't touch anything outside of the configuration location and where you stick it and no other reach, no provisos need to be mentioned.  Once it's on your machine, there is no talking with any 3rd-party services; no telemetry, etc., is being collected.  All feedback can be found in the GitHub issues at this point in time, where you can choose how much information you'll provide about your system.
